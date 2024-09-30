@@ -58,6 +58,6 @@ export default class User {
     }
 
     exibirInfo() {
-        return `Nome: ${this.nome}\nEmail: ${this.email}\nRole: ${this.role}\n`;
+        return `Nome: ${this.nome}\nEmail: ${this.email}\n`;
     }
 }
