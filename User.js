@@ -5,6 +5,7 @@ export default class User {
     #nascimento;
     #role;
     #ativo;
+    
     constructor(nome, sobrenome, email, nascimento, role, ativo = true) {
         this.#nome = nome;
         this.#sobrenome = sobrenome;
@@ -40,7 +41,7 @@ export default class User {
             throw new Error('Novo nome inválido');
         }
         let [nome, ...sobrenome] = novoNome.split(' ');
-        sobrenome = sobrenome.join(' ')
+        sobrenome = sobrenome.join(' ');
         this.#nome = nome;
         this.#sobrenome = sobrenome;
     }
@@ -57,7 +58,19 @@ export default class User {
         this.#ativo = novoAtivo;
     }
 
+//Métodos Estáticos não dependem de instâncias ou de construtores
+    static exibirInfoStatic (nome, email){
+        return `Dados Static\nNome: ${nome}\nEmail: ${email}\n`
+    }
+
     exibirInfo() {
-        return `Nome: ${this.nome}\nEmail: ${this.email}\n`;
+        return `Dados ${this.role}:\nNome: ${this.nome}\n`;
+        /*         if (this.role === 'Estudante') {
+            return `Dados ${this.role}:\nNome: ${this.nome}\n`;
+        } else if (this.role === 'Admin') {
+            return `Dados ${this.role}:\nNome: ${this.nome}\nRole: ${this.role}\n`;
+        } else if (this.role === 'Docente') {
+            return `Dados ${this.role}:\nNome: ${this.nome}\nEmail: ${this.email}\nRole: ${this.role}\n`;
+        } */
     }
 }

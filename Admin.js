@@ -12,6 +12,6 @@ export default class Admin extends User {
 
     exibirInfo() {
         const infos = super.exibirInfo();
-        return `${this.role}\n${infos}\n`;
+        return `${infos}Email: ${this.email}\n`;
     }
 }

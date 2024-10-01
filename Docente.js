@@ -8,4 +8,9 @@ export default class Docente extends User {
     aprovarEstudante(nomeEstudante, curso) {
         return `Estudante ${nomeEstudante} passou no curso ${curso}.\nResponsável ${this.nome}`;
     }
+
+    exibirInfo() {
+        const infos = super.exibirInfo();
+        return `${infos}Email: ${this.email}\nNascimento: ${this.nascimento}\n`;
+    }
 }
